@@ -3,7 +3,7 @@ import "./App.css";
 import CafeInfo from "../Cafeinfo/Cafeinfo";
 import VoteOptions from "../VoteOptions/VoteOptions";
 import VoteStats from "../Votestates/VoteStats";
-import Notification from "../Notification/Notification"; // 👈 правильний імпорт
+import Notification from "../Notification/Notification";
 import type { Votes, VoteType } from "../../types/votes";
 import css from "./App.module.css";
 
