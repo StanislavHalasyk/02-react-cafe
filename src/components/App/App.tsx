@@ -35,7 +35,11 @@ export default function App() {
         canReset={totalVotes > 0}
       />
       {totalVotes > 0 ? (
-        <VoteStats votes={votes} total={totalVotes} positive={positiveRate} />
+        <VoteStats
+          votes={votes}
+          totalVotes={totalVotes}
+          positiveRate={positiveRate}
+        />
       ) : (
         <Notification />
       )}
