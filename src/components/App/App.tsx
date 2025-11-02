@@ -22,8 +22,9 @@ export default function App() {
     setVotes({ good: 0, neutral: 0, bad: 0 });
   };
 
-  const total = votes.good + votes.neutral + votes.bad;
-  const positive = total > 0 ? Math.round((votes.good / total) * 100) : 0;
+  const totalVotes = votes.good + votes.neutral + votes.bad;
+  const positive =
+    totalVotes > 0 ? Math.round((votes.good / totalVotes) * 100) : 0;
 
   return (
     <div className={css.app}>
@@ -31,10 +32,10 @@ export default function App() {
       <VoteOptions
         onVote={handleVote}
         onReset={resetVotes}
-        canReset={total > 0}
+        canReset={totalVotes > 0}
       />
-      {total > 0 ? (
-        <VoteStats votes={votes} total={total} positive={positive} />
+      {totalVotes > 0 ? (
+        <VoteStats votes={votes} total={totalVotes} positive={positive} />
       ) : (
         <Notification />
       )}
