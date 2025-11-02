@@ -23,7 +23,7 @@ export default function App() {
   };
 
   const totalVotes = votes.good + votes.neutral + votes.bad;
-  const positive =
+  const positiveRate =
     totalVotes > 0 ? Math.round((votes.good / totalVotes) * 100) : 0;
 
   return (
@@ -35,7 +35,7 @@ export default function App() {
         canReset={totalVotes > 0}
       />
       {totalVotes > 0 ? (
-        <VoteStats votes={votes} total={totalVotes} positive={positive} />
+        <VoteStats votes={votes} total={totalVotes} positive={positiveRate} />
       ) : (
         <Notification />
       )}
